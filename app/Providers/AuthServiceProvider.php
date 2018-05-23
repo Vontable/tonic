@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Providers;
+namespace Tonic\Providers;
 
-use App\Permission;
+use Tonic\Permission;
 
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
@@ -15,7 +15,7 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        'App\Model' => 'App\Policies\ModelPolicy',
+        'Tonic\Model' => 'Tonic\Policies\ModelPolicy',
     ];
 
     /**

@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace Tonic;
 
 use Illuminate\Database\Eloquent\Model;
 

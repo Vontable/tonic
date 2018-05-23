@@ -1,8 +1,8 @@
 <?php
 
-namespace App;
+namespace Tonic;
 
-use App\Traits\HasRoles;
+use Tonic\Traits\HasRoles;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;

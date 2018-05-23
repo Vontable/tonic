@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Traits;
+namespace Tonic\Traits;
 
-use App\{ Role, Permission };
+use Tonic\{ Role, Permission };
 
 trait HasRoles
 {
