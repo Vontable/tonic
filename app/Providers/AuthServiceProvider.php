@@ -2,6 +2,8 @@
 
 namespace Tonic\Providers;
 
+use Exception;
+
 use Tonic\Permission;
 
 use Illuminate\Support\Facades\Gate;
@@ -42,6 +44,10 @@ class AuthServiceProvider extends ServiceProvider
      */
     protected function getPermissions()
     {
-        return Permission::with('roles')->get();
+        try {
+            return Permission::with('roles')->get();
+        } catch (Exception $e) {
+            return [];
+        }
     }
 }
