@@ -2,6 +2,8 @@
 
 use Carbon\Carbon;
 
+use Tonic\Role;
+
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -18,17 +20,12 @@ class RolesTableSeeder extends Seeder
 
     	DB::table('roles')->truncate();
 
-        DB::table('roles')->insert([
-        	[
-        		'name' => 'member',
-        		'label' => 'member',
-        		'created_at' => Carbon::now()
-        	],
-        	[
-        		'name' => 'admin',
-        		'label' => 'admin',
-        		'created_at' => Carbon::now()
-        	]
+        Role::create([
+            'name' => 'member'
+        ]);
+
+        Role::create([
+            'name' => 'admin'
         ]);
     }
 }

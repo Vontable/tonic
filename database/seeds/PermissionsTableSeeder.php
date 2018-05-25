@@ -2,6 +2,8 @@
 
 use Carbon\Carbon;
 
+use Tonic\Permission;
+
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -18,12 +20,8 @@ class PermissionsTableSeeder extends Seeder
 
     	DB::table('permissions')->truncate();
 
-        DB::table('permissions')->insert([
-        	[
-        		'name' => 'impersonate_users',
-        		'label' => 'impersonate_users',
-        		'created_at' => Carbon::now()
-        	]
-        ]);
+        Permission::create([
+    		'name' => 'impersonate_users'
+    	]);
     }
 }
