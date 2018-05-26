@@ -17,6 +17,9 @@ class Kernel extends ConsoleKernel
         Commands\CreateRole::class,
         Commands\DeletePermission::class,
         Commands\DeleteRole::class,
+        Commands\ListPermissions::class,
+        Commands\ListRoles::class,
+        Commands\UpdatePermission::class,
     ];
 
     /**
