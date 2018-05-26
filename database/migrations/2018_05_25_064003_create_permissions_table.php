@@ -17,12 +17,6 @@ class CreatePermissionsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->timestamps();
-            $table->integer('updated_from')->unsigned()->nullable();
-
-            $table->foreign('updated_from')
-                  ->references('id')
-                  ->on('users')
-                  ->onDelete('set null');
         });
     }
 
