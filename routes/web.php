@@ -18,3 +18,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/impersonate/revert', 'ImpersonateController@revert');
+Route::get('/impersonate/{user}', 'ImpersonateController@impersonate')
+	->middleware('role:admin')
+	->name('impersonate');
+
