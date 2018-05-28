@@ -2,7 +2,8 @@
 
 namespace Tonic\Traits;
 
-use Tonic\{ Role, Permission };
+use Tonic\Role;
+use Tonic\Permission;
 
 trait HasRoles
 {
