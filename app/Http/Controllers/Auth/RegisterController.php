@@ -2,8 +2,10 @@
 
 namespace Tonic\Http\Controllers\Auth;
 
+use DB;
 use Tonic\User;
 use Tonic\Http\Controllers\Controller;
+
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -64,11 +66,18 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $user = User::create([
             'first_name' => $data['first_name'],
             'last_name' => $data['last_name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+
+        DB::table('role_user')->insert([
+            'role_id' => 1,
+            'user_id' => $user->id
+        ]);
+
+        return $user;
     }
 }
